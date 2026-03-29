@@ -14,6 +14,7 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+import reactor.util.annotation.NonNullApi;
 
 import java.util.stream.Collectors;
 
@@ -46,7 +47,7 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
         String path = cleanExchange.getRequest().getURI().getPath();
 
         // 2. Bypass untuk endpoint auth
-        if (path.startsWith("/api/v1/auth")) {
+        if (path.equals(LOGIN_API) || path.equals(REGISTER_API)) {
             return chain.filter(cleanExchange);
         }
 

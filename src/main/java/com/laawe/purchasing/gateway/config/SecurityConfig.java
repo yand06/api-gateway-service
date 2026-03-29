@@ -11,8 +11,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
 
-import static com.laawe.purchasing.gateway.config.AppConstant.ALGORITHM;
-import static com.laawe.purchasing.gateway.config.AppConstant.API_AUTH_ALL;
+import static com.laawe.purchasing.gateway.config.AppConstant.*;
 
 @Configuration
 @EnableWebFluxSecurity
@@ -30,7 +29,7 @@ public class SecurityConfig {
         return http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(exchange -> exchange
-                        .pathMatchers(API_AUTH_ALL).permitAll()
+                        .pathMatchers(LOGIN_API, REGISTER_API).permitAll()
                         .anyExchange().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 ->

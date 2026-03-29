@@ -2,7 +2,8 @@ package com.laawe.purchasing.gateway.config;
 
 public class AppConstant {
 
-    public static final String API_AUTH_ALL = "/api/v1/auth/**";
+    public static final String LOGIN_API = "/api/v1/auth/login";
+    public static final String REGISTER_API = "/api/v1/auth/register";
     public static final String API_VENDOR_ALL = "/api/vendor/**";
     public static final String API_PURCHASING_ALL = "/api/purchasing/**";
     public static final String ROUTE_AUTH_SERVICE = "auth-service";
