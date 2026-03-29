@@ -22,7 +22,10 @@ public class SecurityConfig {
     private String jwtSecretKey;
 
     @Bean
-    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
+    public SecurityWebFilterChain securityWebFilterChain(
+            ServerHttpSecurity http,
+            GatewayAuthenticationEntryPoint entryPoint
+    ) {
 
         return http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
@@ -32,6 +35,10 @@ public class SecurityConfig {
                 )
                 .oauth2ResourceServer(oauth2 ->
                         oauth2.jwt(jwt -> jwt.jwtDecoder(jwtDecoder()))
+                        .authenticationEntryPoint(entryPoint)
+                )
+                .exceptionHandling(e -> e
+                        .authenticationEntryPoint(entryPoint)
                 )
                 .build();
     }
