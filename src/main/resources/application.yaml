@@ -1,11 +1,9 @@
 spring:
-#  security:
-#    oauth2:
-#      resourceserver:
-#        jwt:
-#          issuer-uri: http://localhost:8081
   application:
     name: api-gateway-service
+  messages:
+    basename: language.messages
+    encoding: UTF-8
   cloud:
     config:
       enabled: false

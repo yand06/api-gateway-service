@@ -1,4 +1,4 @@
-package com.laawe.purchasing.gateway.config;
+package com.laawe.purchasing.gateway.config.constant;
 
 public class AppConstant {
 
@@ -7,14 +7,6 @@ public class AppConstant {
     public static final String LOGIN_API = "/user/login";
     public static final String REGISTER_API = "/user/register";
     public static final String REFRESH_TOKEN_API = "/user/refresh-token";
-    public static final String API_VENDOR_ALL = "/api/vendor/**";
-    public static final String API_PURCHASING_ALL = "/api/purchasing/**";
-    public static final String ROUTE_AUTH_SERVICE = "auth-service";
-    public static final String ROUTE_VENDOR_SERVICE = "vendor-service";
-    public static final String ROUTE_PURCHASING_SERVICE = "purchasing-service";
-    public static final String URI_AUTH_SERVICE = "http://localhost:8081";
-    public static final String URI_VENDOR_SERVICE = "http://localhost:8082";
-    public static final String URI_PURCHASING_SERVICE = "http://localhost:8083";
 
     public static final String X_USER_ID = "X-User-ID";
     public static final String X_USER_NAME = "X-User-Name";
@@ -28,4 +20,6 @@ public class AppConstant {
     public static final String ALGORITHM = "HmacSHA256";
     public static final String BL_PREFIX = "BLACKLIST:";
     public static final String HEADER_BEARER = "Bearer ";
+    public static final String SUCCESS_STATUS = "SUCCESS";
+    public static final String ERROR_STATUS = "ERROR";
 }

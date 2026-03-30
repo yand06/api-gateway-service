@@ -2,7 +2,6 @@ package com.laawe.purchasing.gateway.filter;
 
 import com.laawe.purchasing.gateway.config.GatewayAuthenticationEntryPoint;
 import com.nimbusds.jwt.SignedJWT;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
@@ -15,12 +14,11 @@ import org.springframework.web.server.ServerWebExchange;
 import org.springframework.web.server.WebFilter;
 import org.springframework.web.server.WebFilterChain;
 import reactor.core.publisher.Mono;
-import reactor.util.annotation.NonNullApi;
 
 import java.text.ParseException;
 
-import static com.laawe.purchasing.gateway.config.AppConstant.BL_PREFIX;
-import static com.laawe.purchasing.gateway.config.AppConstant.HEADER_BEARER;
+import static com.laawe.purchasing.gateway.config.constant.AppConstant.BL_PREFIX;
+import static com.laawe.purchasing.gateway.config.constant.AppConstant.HEADER_BEARER;
 
 @Slf4j
 @Component

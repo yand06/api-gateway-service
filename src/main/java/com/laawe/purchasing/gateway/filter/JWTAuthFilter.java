@@ -14,11 +14,10 @@ import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
-import reactor.util.annotation.NonNullApi;
 
 import java.util.stream.Collectors;
 
-import static com.laawe.purchasing.gateway.config.AppConstant.*;
+import static com.laawe.purchasing.gateway.config.constant.AppConstant.*;
 
 @Component
 public class JWTAuthFilter implements GlobalFilter, Ordered {

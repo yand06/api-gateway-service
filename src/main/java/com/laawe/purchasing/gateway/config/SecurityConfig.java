@@ -11,7 +11,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 
 import javax.crypto.spec.SecretKeySpec;
 
-import static com.laawe.purchasing.gateway.config.AppConstant.*;
+import static com.laawe.purchasing.gateway.config.constant.AppConstant.*;
 
 @Configuration
 @EnableWebFluxSecurity

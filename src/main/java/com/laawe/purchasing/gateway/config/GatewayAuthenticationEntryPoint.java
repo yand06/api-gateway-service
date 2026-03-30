@@ -2,6 +2,8 @@ package com.laawe.purchasing.gateway.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.laawe.purchasing.gateway.config.constant.ResponseCode;
+import com.laawe.purchasing.gateway.config.i18n.Translator;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.buffer.DataBuffer;
@@ -12,6 +14,10 @@ import org.springframework.security.web.server.ServerAuthenticationEntryPoint;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
+
+import java.util.Locale;
+
+import static com.laawe.purchasing.gateway.config.constant.AppConstant.ERROR_STATUS;
 
 @Slf4j
 @Component
@@ -29,14 +35,17 @@ public class GatewayAuthenticationEntryPoint implements ServerAuthenticationEntr
             response.setStatusCode(HttpStatus.UNAUTHORIZED);
             response.getHeaders().setContentType(MediaType.APPLICATION_JSON);
 
+            Locale userLocale = exchange.getRequest().getHeaders().getAcceptLanguageAsLocales()
+                    .stream()
+                    .findFirst()
+                    .orElse(Locale.getDefault());
             var responseBody = new ErrorResponse(
-                    "ERROR",
-                    "07",
-                    "Akses ditolak! Token tidak valid, telah kedaluwarsa, atau tidak ditemukan."
+                    ERROR_STATUS,
+                    ResponseCode.UNAUTHORIZED.getCode(),
+                    Translator.toLocale(ResponseCode.UNAUTHORIZED.getMessageKey(), userLocale)
             );
 
             try {
-                // Konversi objek Java menjadi byte array JSON
                 byte[] bytes = objectMapper.writeValueAsBytes(responseBody);
                 DataBuffer buffer = response.bufferFactory().wrap(bytes);
 
