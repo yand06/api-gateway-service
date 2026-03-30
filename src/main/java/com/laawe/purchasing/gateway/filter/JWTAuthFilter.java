@@ -28,12 +28,12 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
-        // 🔥 1. SOLUSI DEFINITIF: Buat map header baru yang terpisah dari ikatan ReadOnly Spring
+        // 1. SOLUSI DEFINITIF: Buat map header baru yang terpisah dari ikatan ReadOnly Spring
         HttpHeaders cleanHeaders = new HttpHeaders();
-        cleanHeaders.putAll(exchange.getRequest().getHeaders()); // Copy semua header asli
-        cleanHeaders.remove(X_USER_ID);   // Aman
-        cleanHeaders.remove(X_USER_NAME); // Aman
-        cleanHeaders.remove(X_USER_ROLES); // Aman
+        cleanHeaders.putAll(exchange.getRequest().getHeaders());
+        cleanHeaders.remove(X_USER_ID);
+        cleanHeaders.remove(X_USER_NAME);
+        cleanHeaders.remove(X_USER_ROLES);
 
         // Gunakan Decorator untuk menimpa method getHeaders()
         ServerHttpRequest cleanRequest = new ServerHttpRequestDecorator(exchange.getRequest()) {
@@ -47,7 +47,9 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
         String path = cleanExchange.getRequest().getURI().getPath();
 
         // 2. Bypass untuk endpoint auth
-        if (path.equals(LOGIN_API) || path.equals(REGISTER_API)) {
+        if (path.equals(BASE_API_URL + LOGIN_API)
+                || path.equals(BASE_API_URL + REGISTER_API)
+                || path.equals(BASE_API_URL + REFRESH_TOKEN_API)) {
             return chain.filter(cleanExchange);
         }
 

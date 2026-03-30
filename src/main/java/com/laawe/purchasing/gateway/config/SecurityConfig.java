@@ -29,7 +29,11 @@ public class SecurityConfig {
         return http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(exchange -> exchange
-                        .pathMatchers(LOGIN_API, REGISTER_API).permitAll()
+                        .pathMatchers(
+                                BASE_API_URL + LOGIN_API,
+                                BASE_API_URL + REGISTER_API,
+                                BASE_API_URL + REFRESH_TOKEN_API
+                        ).permitAll()
                         .anyExchange().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 ->

@@ -2,8 +2,11 @@ package com.laawe.purchasing.gateway.config;
 
 public class AppConstant {
 
-    public static final String LOGIN_API = "/api/v1/auth/login";
-    public static final String REGISTER_API = "/api/v1/auth/register";
+    public static final String BASE_API_URL = "/api/v1/auth";
+
+    public static final String LOGIN_API = "/user/login";
+    public static final String REGISTER_API = "/user/register";
+    public static final String REFRESH_TOKEN_API = "/user/refresh-token";
     public static final String API_VENDOR_ALL = "/api/vendor/**";
     public static final String API_PURCHASING_ALL = "/api/purchasing/**";
     public static final String ROUTE_AUTH_SERVICE = "auth-service";
@@ -23,4 +26,6 @@ public class AppConstant {
     public static final String USER_ID = "user_id";
 
     public static final String ALGORITHM = "HmacSHA256";
+    public static final String BL_PREFIX = "BLACKLIST:";
+    public static final String HEADER_BEARER = "Bearer ";
 }
