@@ -8,6 +8,7 @@ import org.springframework.core.Ordered;
 import org.springframework.http.HttpHeaders; // ✅ Import baru
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpRequestDecorator; // ✅ Import baru
+import org.springframework.lang.NonNull;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.jwt.Jwt;
@@ -27,15 +28,14 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
-        // 1. SOLUSI DEFINITIF: Buat map header baru yang terpisah dari ikatan ReadOnly Spring
         HttpHeaders cleanHeaders = new HttpHeaders();
         cleanHeaders.putAll(exchange.getRequest().getHeaders());
         cleanHeaders.remove(X_USER_ID);
         cleanHeaders.remove(X_USER_NAME);
         cleanHeaders.remove(X_USER_ROLES);
 
-        // Gunakan Decorator untuk menimpa method getHeaders()
         ServerHttpRequest cleanRequest = new ServerHttpRequestDecorator(exchange.getRequest()) {
+            @NonNull
             @Override
             public HttpHeaders getHeaders() {
                 return cleanHeaders;
@@ -45,14 +45,11 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
         ServerWebExchange cleanExchange = exchange.mutate().request(cleanRequest).build();
         String path = cleanExchange.getRequest().getURI().getPath();
 
-        // 2. Bypass untuk endpoint auth
         if (path.equals(BASE_API_URL + LOGIN_API)
-                || path.equals(BASE_API_URL + REGISTER_API)
                 || path.equals(BASE_API_URL + REFRESH_TOKEN_API)) {
             return chain.filter(cleanExchange);
         }
 
-        // 3. Proses JWT jika ada
         return cleanExchange.getPrincipal()
                 .cast(Authentication.class)
                 .flatMap(auth -> {
@@ -66,7 +63,6 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
 
                     log.debug("REQUEST FROM userId={}, path={}", userId, path);
 
-                    // 4. Inject header yang sudah divalidasi ke request baru
                     HttpHeaders authenticatedHeaders = new HttpHeaders();
                     authenticatedHeaders.putAll(cleanHeaders);
                     authenticatedHeaders.set(X_USER_ID, userId);
@@ -74,6 +70,7 @@ public class JWTAuthFilter implements GlobalFilter, Ordered {
                     authenticatedHeaders.set(X_USER_ROLES, roles);
 
                     ServerHttpRequest authenticatedRequest = new ServerHttpRequestDecorator(cleanExchange.getRequest()) {
+                        @NonNull
                         @Override
                         public HttpHeaders getHeaders() {
                             return authenticatedHeaders;

@@ -22,4 +22,15 @@ public class AppConstant {
     public static final String HEADER_BEARER = "Bearer ";
     public static final String SUCCESS_STATUS = "SUCCESS";
     public static final String ERROR_STATUS = "ERROR";
+
+    public static final String[] CORS_ALLOWED_ORIGINS = {
+            "http://localhost:3000",
+            "http://127.0.0.1:3000"
+    };
+    public static final String GET_HTTP_METHOD = "GET";
+    public static final String POST_HTTP_METHOD = "POST";
+    public static final String PUT_HTTP_METHOD = "PUT";
+    public static final String DELETE_HTTP_METHOD = "DELETE";
+    public static final String OPTIONS_HTTP_METHOD = "OPTIONS";
+    public static final String PATCH_HTTP_METHOD = "PATCH";
 }
