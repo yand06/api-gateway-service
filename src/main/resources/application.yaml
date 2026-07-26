@@ -32,4 +32,9 @@ secret:
 
 logging:
   level:
-    org.springframework.security: DEBUG
+    org.springframework.security: INFO
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
