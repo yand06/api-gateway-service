@@ -54,3 +54,111 @@
                 c.l.p.g.ApiGatewayServiceApplication - Started ApiGatewayServiceApplication in 9.895 seconds (process running for 11.106)
 2026-07-20 19:29:06.070 [lettuce-nioEventLoop-5-1] WARN  [TraceID: , SpanID: ]
                 c.l.p.g.c.GatewayAuthenticationEntryPoint - Akses ditolak di API Gateway (Unauthorized): Jwt expired at 2026-07-20T12:25:39Z
+2026-07-26 22:15:46.119 [background-preinit] INFO  [TraceID: , SpanID: ]
+                o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-07-26 22:15:46.197 [restartedMain] INFO  [TraceID: , SpanID: ]
+                c.l.p.g.ApiGatewayServiceApplication - Starting ApiGatewayServiceApplication using Java 21.0.9 with PID 22732 (C:\My-Portfolio\api-gateway\target\classes started by Asani in C:\My-Portfolio\api-gateway)
+2026-07-26 22:15:46.199 [restartedMain] INFO  [TraceID: , SpanID: ]
+                c.l.p.g.ApiGatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-26 22:15:46.272 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-26 22:15:46.272 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-26 22:15:48.277 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-07-26 22:15:48.281 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-07-26 22:15:48.379 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 65 ms. Found 0 Redis repository interfaces.
+2026-07-26 22:15:48.986 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.cloud.context.scope.GenericScope - BeanFactory id=fe0875c7-dd50-3f29-bfc1-068c0e9f3a3e
+2026-07-26 22:15:51.684 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2026-07-26 22:15:51.685 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2026-07-26 22:15:51.685 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-07-26 22:15:51.686 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2026-07-26 22:15:51.687 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-07-26 22:15:51.948 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-07-26 22:15:52.603 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-07-26 22:15:52.824 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2026-07-26 22:15:52.954 [restartedMain] INFO  [TraceID: , SpanID: ]
+                c.l.p.g.ApiGatewayServiceApplication - Started ApiGatewayServiceApplication in 7.8 seconds (process running for 8.975)
+2026-07-26 22:36:55.417 [background-preinit] INFO  [TraceID: , SpanID: ]
+                o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-07-26 22:36:55.478 [restartedMain] INFO  [TraceID: , SpanID: ]
+                c.l.p.g.ApiGatewayServiceApplication - Starting ApiGatewayServiceApplication using Java 21.0.9 with PID 20648 (C:\My-Portfolio\api-gateway\target\classes started by Asani in C:\My-Portfolio\api-gateway)
+2026-07-26 22:36:55.478 [restartedMain] INFO  [TraceID: , SpanID: ]
+                c.l.p.g.ApiGatewayServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2026-07-26 22:36:55.537 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-07-26 22:36:55.538 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-07-26 22:36:57.473 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+2026-07-26 22:36:57.477 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-07-26 22:36:57.526 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 26 ms. Found 0 Redis repository interfaces.
+2026-07-26 22:36:57.974 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.cloud.context.scope.GenericScope - BeanFactory id=fe0875c7-dd50-3f29-bfc1-068c0e9f3a3e
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2026-07-26 22:37:00.680 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2026-07-26 22:37:00.681 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2026-07-26 22:37:00.681 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2026-07-26 22:37:00.681 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2026-07-26 22:37:00.681 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2026-07-26 22:37:00.681 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2026-07-26 22:37:00.929 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+2026-07-26 22:37:01.502 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2026-07-26 22:37:01.704 [restartedMain] INFO  [TraceID: , SpanID: ]
+                o.s.b.w.e.netty.NettyWebServer - Netty started on port 8080 (http)
+2026-07-26 22:37:01.794 [restartedMain] INFO  [TraceID: , SpanID: ]
+                c.l.p.g.ApiGatewayServiceApplication - Started ApiGatewayServiceApplication in 7.278 seconds (process running for 8.451)
